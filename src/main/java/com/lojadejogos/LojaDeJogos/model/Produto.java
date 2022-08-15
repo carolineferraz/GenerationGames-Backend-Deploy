@@ -31,12 +31,14 @@ public class Produto {
 	@NotNull
 	private double preco;
 	
+	private String foto;
+	
 	@ManyToOne
-	@JsonIgnoreProperties("produto")
+	@JsonIgnoreProperties("produtos")
 	private Categoria categoria;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("usuario")
+	@JsonIgnoreProperties("produtos")
 	private Usuario usuario;
 
 	public long getId() {
@@ -55,6 +57,18 @@ public class Produto {
 		return preco;
 	}
 
+	public String getFoto() {
+		return foto;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -71,16 +85,12 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public Categoria getCategoria() {
-		return categoria;
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
 	}
 
 	public void setUsuario(Usuario usuario) {
